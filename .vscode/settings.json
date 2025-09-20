@@ -1,0 +1,25 @@
+{
+  // Settings for go/bazel are based on editor setup instructions at
+  // https://github.com/bazelbuild/rules_go/wiki/Editor-setup#visual-studio-code
+  "go.goroot": "${workspaceFolder}/bazel-${workspaceFolderBasename}/external/rules_go++go_sdk+go_default_sdk/",
+  "go.toolsEnvVars": {
+    "GOPACKAGESDRIVER": "${workspaceFolder}/tools/gopackagesdriver.sh"
+  },
+  "gopls": {
+    "build.workspaceFiles": [
+      "**/BUILD",
+      "**/WORKSPACE",
+      "**/*.{bzl,bazel}",
+    ],
+    "build.directoryFilters": [
+      "-bazel-bin",
+      "-bazel-out",
+      "-bazel-testlogs",
+      "-bazel-${workspaceFolerBasename}",
+    ],
+    "formatting.gofumpt": true,
+    "formatting.local": "github.com/hw-park/${workspaceFolerBasename}",
+    "ui.completion.usePlaceholders": true,
+    "ui.semanticTokens": true,
+  },
+}
